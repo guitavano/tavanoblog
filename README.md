@@ -5,5 +5,3 @@ npm run dev
 
 npm run slicemachine
 ```
-
-.
