@@ -1,0 +1,19 @@
+.headerContainer {
+    height: 6rem;
+
+    background-color: var(--bg);
+}
+
+.headerContent {
+    max-width: 1120px;
+    height: 6rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+
+    h1 {
+        color: var(--heading);
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "_cts": {
+    "posts": {}
+  },
+  "slices": {
+    "TitleBlock": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Banner": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Content": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "TextContent": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "ImageContent": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}
