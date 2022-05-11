@@ -58,7 +58,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "D:\\workspace\\tavanoblog\\tavanoblog\\.slicemachine\\assets\\slices\\Banner\\default\\preview.png",
+            "path": "/home/guilherme/Documents/tavanoblog/tavanoblog/.slicemachine/assets/slices/Banner/default/preview.png",
             "width": 800,
             "height": 73
           }
@@ -91,14 +91,6 @@
                     "allowTargetBlank": true,
                     "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                   }
-                },
-                "images": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Images",
-                    "constraint": {},
-                    "thumbnails": []
-                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -115,236 +107,16 @@
                 "Text": [
                   {
                     "type": "paragraph",
-                    "text": "Aliquip dolore est dolor ad sit non non aliquip ullamco et dolor amet dolore. Commodo laboris pariatur laborum anim ea duis laboris non sint occaecat dolore. Deserunt nostrud nisi voluptate mollit non.",
+                    "text": "Incididunt enim in commodo sit est excepteur occaecat exercitation. Nisi duis Lorem reprehenderit minim et non sit laboris ipsum sint. Consectetur incididunt nulla in non occaecat nisi mollit ut nulla laborum nostrud sint sunt.",
                     "spans": []
                   }
-                ],
-                "images": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
-                }
+                ]
               },
               {
                 "Text": [
                   {
                     "type": "paragraph",
-                    "text": "Ut veniam anim cupidatat dolor esse quis et nulla minim officia et sunt.",
-                    "spans": []
-                  }
-                ],
-                "images": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
-                }
-              }
-            ],
-            "primary": {}
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "D:\\workspace\\tavanoblog\\tavanoblog\\.slicemachine\\assets\\slices\\Content\\default\\preview.png",
-            "width": 800,
-            "height": 73
-          }
-        }
-      },
-      "image_content": {
-        "library": "slices",
-        "id": "image_content",
-        "name": "ImageContent",
-        "description": "ImageContent",
-        "model": {
-          "id": "image_content",
-          "type": "SharedSlice",
-          "name": "ImageContent",
-          "description": "ImageContent",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "ImageContent",
-              "primary": {},
-              "items": {
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Image",
-                    "constraint": {},
-                    "thumbnails": []
-                  }
-                }
-              },
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "name": "Default",
-            "slice_type": "image_content",
-            "items": [
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
-                }
-              }
-            ],
-            "primary": {}
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "D:\\workspace\\tavanoblog\\tavanoblog\\.slicemachine\\assets\\slices\\ImageContent\\default\\preview.png",
-            "width": 800,
-            "height": 73
-          }
-        }
-      },
-      "text_content": {
-        "library": "slices",
-        "id": "text_content",
-        "name": "TextContent",
-        "description": "TextContent",
-        "model": {
-          "id": "text_content",
-          "type": "SharedSlice",
-          "name": "TextContent",
-          "description": "TextContent",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "TextContent",
-              "primary": {},
-              "items": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Text",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                  }
-                }
-              },
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "name": "Default",
-            "slice_type": "text_content",
-            "items": [
-              {
-                "text": [
-                  {
-                    "type": "paragraph",
-                    "text": "Labore cillum ipsum laboris dolore commodo nulla sint. Enim aute duis tempor sint sint dolore laborum deserunt sint officia amet do occaecat velit pariatur.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "text": [
-                  {
-                    "type": "paragraph",
-                    "text": "Aute consequat dolore esse consectetur.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "text": [
-                  {
-                    "type": "paragraph",
-                    "text": "Consequat id eiusmod velit laborum in consequat non pariatur. Qui ex ea qui tempor id officia laborum ut excepteur ad. Aliquip sint dolor occaecat eu magna et in et Lorem exercitation.",
+                    "text": "Et exercitation fugiat laboris eiusmod excepteur excepteur veniam amet proident ex quis proident ex aliqua. Eu esse veniam aliquip ea veniam laboris occaecat aliquip enim adipisicing sit dolore nisi ipsum. Veniam in magna duis culpa eiusmod.",
                     "spans": []
                   }
                 ]
@@ -357,13 +129,7 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {
-          "default": {
-            "path": "D:\\workspace\\tavanoblog\\tavanoblog\\.slicemachine\\assets\\slices\\TextContent\\default\\preview.png",
-            "width": 800,
-            "height": 94
-          }
-        }
+        "screenshotPaths": {}
       },
       "title_block": {
         "library": "slices",
@@ -435,7 +201,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "D:\\workspace\\tavanoblog\\tavanoblog\\.slicemachine\\assets\\slices\\TitleBlock\\default\\preview.png",
+            "path": "/home/guilherme/Documents/tavanoblog/tavanoblog/.slicemachine/assets/slices/TitleBlock/default/preview.png",
             "width": 800,
             "height": 94
           }

@@ -2,22 +2,16 @@
 
 import Banner from './Banner';
 import Content from './Content';
-import ImageContent from './ImageContent';
-import TextContent from './TextContent';
 import TitleBlock from './TitleBlock';
 
 export {
 	Banner,
 	Content,
-	ImageContent,
-	TextContent,
 	TitleBlock,
 };
 
 export const components = {
 	banner: Banner,
 	content: Content,
-	image_content: ImageContent,
-	text_content: TextContent,
 	title_block: TitleBlock,
 };

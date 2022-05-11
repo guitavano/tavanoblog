@@ -16,7 +16,15 @@
     },
     "Content": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {
+          "Text": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "TextContent": {

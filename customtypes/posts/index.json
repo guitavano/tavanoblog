@@ -53,19 +53,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "title_block": {
+            "banner": {
               "type": "SharedSlice"
             },
             "content": {
               "type": "SharedSlice"
             },
-            "banner": {
-              "type": "SharedSlice"
-            },
-            "image_content": {
-              "type": "SharedSlice"
-            },
-            "text_content": {
+            "title_block": {
               "type": "SharedSlice"
             }
           }
