@@ -2,7 +2,9 @@ import styles from './post.module.scss'
 
 import { createClient } from './../../prismicio'
 import { GetStaticPaths } from 'next'
-import { PrismicRichText, PrismicText } from '@prismicio/react'
+import { PrismicRichText } from '@prismicio/react'
+import Head from 'next/head';
+import { Children } from 'react';
 
 interface Post{
     uid: string;
@@ -33,20 +35,32 @@ export default function Post({post} : PostProps){
 
     return(
         <>
+            <Head>
+                <title>{post.meta_title}</title>
+                <meta name="description" content={post.meta_description} />
+            </Head>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <h1>Post</h1>          
-                    <div>
+                    <h1>{post.data.title}</h1>    
+                    <p>{post.data.description}</p>  
+
+                    <img src={post.data.banner.url} alt="" />
+                    
                     {
-                        post.data.content.map((text, idx) => {
+                        post.data.content.map((block, idx) => {
                             return(
-                                <div key={idx}>
-                                    <PrismicRichText field={text} />
-                                </div>                   
+                                <PrismicRichText 
+                                key={idx}
+                                field={block.Text}
+                                components={{
+                                    paragraph: ({children}) => <p className='paragraph'>{children}</p>
+                                }}
+                                />  
                             )
+                            
                         })
                     }
-                    </div>          
+   
                 </div>
             </div>
             
