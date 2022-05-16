@@ -6,6 +6,8 @@ export default class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+                    
+                    <meta name="google-site-verification" content="xKxIrkDJaQqe7DOYQG4sDCw4P4y98BS8OgucZzL4CFs" />
                 </Head>
                 <body>
                     <Main />
