@@ -5,6 +5,9 @@ import { GetStaticPaths } from 'next'
 import { PrismicRichText } from '@prismicio/react'
 import Head from 'next/head';
 import { Children } from 'react';
+import { FiCalendar, FiUser } from 'react-icons/fi';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 interface Post{
     uid: string;
@@ -44,6 +47,13 @@ export default function Post({post} : PostProps){
                     <h1>{post.data.title}</h1>    
                     <p>{post.data.description}</p>  
 
+                    <div className={styles.info}>
+                      <div>
+                        <FiCalendar />
+                        <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
+                      </div>
+                    </div>
+
                     <img src={post.data.banner.url} alt="" />
                     
                     {
@@ -60,6 +70,11 @@ export default function Post({post} : PostProps){
                             
                         })
                     }
+
+                    <div className={styles.author}>
+                        <FiUser />
+                        <p>{post.author}</p>
+                    </div>
    
                 </div>
             </div>

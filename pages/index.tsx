@@ -12,6 +12,7 @@ interface Post {
   uid?: string;
   first_publication_date: string | null;
   data: {
+    category: string;
     title: string;
     subtitle: string;
     author: string;
@@ -45,6 +46,9 @@ export default function Home({ posts }: HomeProps) {
                     <strong>{post.data.title}</strong>
                     <p>{post.data.subtitle}</p>
                     <div className={styles.info}>
+                      <div className={`category ${post.data.category}`}>
+                        <p>{post.data.category}</p>
+                      </div>
                       <div>
                         <FiCalendar />
                         <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
@@ -70,6 +74,8 @@ export async function getStaticProps({ previewData }) {
 
   const response = await client.getByType('posts')
 
+
+
   const posts: Posts = {
     next_page: response.next_page,
     results: response.results.map(result => {
@@ -77,6 +83,7 @@ export async function getStaticProps({ previewData }) {
         uid: result.uid,
         first_publication_date: result.first_publication_date,
         data: {
+          category: result.data.Categoria[0].text,
           author: result.data.author[0].text,
           title: result.data.slices.find(slice => slice.slice_type == "title_block").primary.title[0].text,
           subtitle: result.data.slices.find(slice => slice.slice_type == "title_block").primary.description[0].text,
