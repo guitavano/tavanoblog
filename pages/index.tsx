@@ -35,6 +35,7 @@ export default function Home({ posts }: HomeProps) {
     <>
       <Head>
         <title>TavanoBlog - Blog de tecnologia</title>
+        <meta name="description" content="Blog de tecnologia com diversos assuntos sobre Desenvolvimento Web, E-commerce, Marketing Digital, Performance e muito mais!" />
       </Head>
       <main className={styles.container}>
         <div className={styles.posts}>

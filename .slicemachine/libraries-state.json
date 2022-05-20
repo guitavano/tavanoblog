@@ -89,7 +89,7 @@
                     "label": "Text",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,list-item,o-list-item,rtl,embed"
                   }
                 }
               },
@@ -107,7 +107,7 @@
                 "Text": [
                   {
                     "type": "paragraph",
-                    "text": "Incididunt enim in commodo sit est excepteur occaecat exercitation. Nisi duis Lorem reprehenderit minim et non sit laboris ipsum sint. Consectetur incididunt nulla in non occaecat nisi mollit ut nulla laborum nostrud sint sunt.",
+                    "text": "Et aliquip nisi consequat sint est quis ex nostrud voluptate fugiat. Ea culpa non ipsum amet amet magna veniam.",
                     "spans": []
                   }
                 ]
@@ -116,7 +116,34 @@
                 "Text": [
                   {
                     "type": "paragraph",
-                    "text": "Et exercitation fugiat laboris eiusmod excepteur excepteur veniam amet proident ex quis proident ex aliqua. Eu esse veniam aliquip ea veniam laboris occaecat aliquip enim adipisicing sit dolore nisi ipsum. Veniam in magna duis culpa eiusmod.",
+                    "text": "Exercitation velit duis fugiat id sit consequat et officia eiusmod ex sit. Cupidatat reprehenderit culpa esse aliquip ipsum proident.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "Text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Officia sint aliquip pariatur.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "Text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Excepteur aliquip pariatur esse minim velit eu dolore anim esse ad. Proident eu magna ea anim magna quis et esse.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "Text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Consectetur aliqua dolore cupidatat amet sunt enim ut. Labore deserunt proident eiusmod. Elit ad laboris reprehenderit in sunt nisi do irure nulla.",
                     "spans": []
                   }
                 ]
