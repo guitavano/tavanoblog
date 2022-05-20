@@ -72,9 +72,10 @@ export default function Home({ posts }: HomeProps) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const response = await client.getByType('posts')
-
-
+  const response = await client.getByType('posts',{orderings: {
+    field: 'document.first_publication_date',
+    direction: 'desc'
+  }})
 
   const posts: Posts = {
     next_page: response.next_page,
