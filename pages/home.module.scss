@@ -18,13 +18,21 @@
         display: block;
         text-decoration: none;
         margin-top: 3rem;
+        padding: 10px;
+
+        &:hover{
+            strong{
+                font-size: 1.55rem;
+                margin-left: -10px;
+            }
+        }
 
         strong {
             display: block;
             font-size: 1.5rem;
             margin: 1rem 0 0.5rem 0;
             line-height: 2rem;
-            transition: color 0.2s;
+            transition: 0.5s;
 
             color: var(--heading);
         }
@@ -32,6 +40,7 @@
         p {
             color: var(--body);
             margin: 0.2rem 0;
+            transition: 0.5s;
         }
     }
 

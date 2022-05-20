@@ -34,8 +34,6 @@ interface PostProps{
 
 export default function Post({post} : PostProps){
 
-    console.log(post)
-
     return(
         <>
             <Head>

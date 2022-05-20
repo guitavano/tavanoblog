@@ -30,7 +30,6 @@ interface HomeProps {
 
 
 export default function Home({ posts }: HomeProps) {
-  console.log(posts)
   return (
     <>
       <Head>
