@@ -53,21 +53,23 @@ export default function Post({post} : PostProps){
                     </div>
 
                     <img src={post.data.banner.url} alt="" />
-                    
-                    {
-                        post.data.content.map((block, idx) => {
-                            return(
-                                <PrismicRichText 
-                                key={idx}
-                                field={block.Text}
-                                components={{
-                                    paragraph: ({children}) => <p className='paragraph'>{children}</p>
-                                }}
-                                />  
-                            )
-                            
-                        })
-                    }
+
+                    <div className={styles.textContent}>
+                        {
+                            post.data.content.map((block, idx) => {
+                                return(
+                                    <PrismicRichText 
+                                    key={idx}
+                                    field={block.Text}
+                                    components={{
+                                        paragraph: ({children}) => <p className='paragraph'>{children}</p>
+                                    }}
+                                    />  
+                                )
+                                
+                            })
+                        }
+                    </div>
 
                     <div className={styles.author}>
                         <FiUser />

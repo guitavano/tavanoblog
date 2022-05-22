@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Header from '../components/Header';
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import Link from 'next/link'
 import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
