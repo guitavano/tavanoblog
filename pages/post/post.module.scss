@@ -55,6 +55,10 @@
     p{
         margin: 1.5rem 0;
         color: #000;
+        a{
+            font-weight: bold;
+            color: var(--highlight);
+        }
     }
 
     ul, ol{
