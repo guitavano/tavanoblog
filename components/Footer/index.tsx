@@ -8,10 +8,10 @@ export default function Footer(){
             <footer className={styles.footerContainer}>
                 <div className={styles.footerContent}>
                     <div className={styles.social}>
-                        <a href="https://www.linkedin.com/in/guitavano/" target="_blank" className={styles.linkedin}>
+                        <a href="https://www.linkedin.com/in/guitavano/" target="_blank" rel="noreferrer" className={styles.linkedin}>
                             <SiLinkedin/>
                         </a>
-                        <a href="https://github.com/guitavano" target="_blank" className={styles.github}>
+                        <a href="https://github.com/guitavano" target="_blank" rel="noreferrer" className={styles.github}>
                             <SiGithub />
                         </a>
                     </div>
