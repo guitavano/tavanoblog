@@ -36,14 +36,11 @@
     svg{
         padding: 5px;
         border-radius: 5px;
-        transition: all 0.2s ease;
     }
 
     &:hover{
         svg{
             background-color: #0e76a8;
-            animation: circle-anim 0.3s ease forwards;
-	        transition: all 0.4s ease;
         }
     }
 }
@@ -52,27 +49,10 @@
     svg{
         padding: 5px;
         border-radius: 15px;
-        transition: 0.5s;
     }
     &:hover{
         svg{
             background-color: #171515;
-            animation: circle-anim 0.3s ease forwards;
-	        transition: all 0.4s ease;
         }
     }
-}
-
-@keyframes circle-anim{
-	0% {
-		
-	}
-	
-	90%{
-
-	}
-	
-	100%{
-
-	}
 }
