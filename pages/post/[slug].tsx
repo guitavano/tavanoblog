@@ -9,6 +9,8 @@ import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
+import {useRouter} from 'next/router'
+
 interface Post{
     uid: string;
     meta_title: string;
@@ -34,11 +36,18 @@ interface PostProps{
 
 export default function Post({post} : PostProps){
 
+    const router = useRouter()
+
     return(
         <>
             <Head>
                 <title>{post.meta_title}</title>
                 <meta name="description" content={post.meta_description} />
+                <script type="application/ld+json">
+                    {
+                    `{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://tavanoblog.com.br/${post.uid}"},"headline": "${post.data.title}", "image": "${post.data.banner.url}", "datePublished": "${post.first_publication_date}","author": {"@type": "Person","name": "${post.author}"},"publisher": {"@type": "Organization","name": "TavanoBlog"}}`
+                    }
+                </script>
             </Head>
             <div className={styles.container}>
                 <div className={styles.content}>
