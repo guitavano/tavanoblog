@@ -6,6 +6,24 @@ body {
   background-color: var(--bg);
 }
 
+body>div{
+  position: relative;
+  z-index: 2;
+}
+
+body::before{
+  content: '';
+  background-image: url(https://images.prismic.io/tavanoblog/751c89fd-ad40-4f4a-aea2-4cb0bb163a6c___-removebg-preview.png?auto=compress,format);
+  background-size: 15px;
+  opacity: 0.02;
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 $medium: 720px;
 
 a {
