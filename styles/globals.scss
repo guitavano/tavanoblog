@@ -37,7 +37,7 @@ a {
 }
 
 :root {
-  --highlight: #d10071;
+  --highlight: #f30f8b;
   --heading: #F8F8F8;
   --bg: #1A1D23;
   --info: #BBBBBB;
@@ -69,4 +69,7 @@ a {
 
 .JavaScript{
   background-color: #F0DB4F;
+  p{
+    color: black !important;
+  }
 }

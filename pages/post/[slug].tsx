@@ -61,7 +61,9 @@ export default function Post({post} : PostProps){
                       </div>
                     </div>
 
-                    <img src={post.data.banner.url} alt="" />
+                    {post.data.banner.url ?  <img src={post.data.banner.url} alt="" /> : null}
+
+                    
 
                     <div className={styles.textContent}>
                         {
@@ -107,6 +109,8 @@ export async function getStaticProps({ params, previewData }) {
   
     const response = await client.getByUID('posts', String(slug))
 
+    const banner = response.data.slices.find(slice => slice.slice_type == "banner")
+
      const post : Post = {
         uid: response.uid,
         meta_title: response.data.title[0].text,
@@ -118,9 +122,9 @@ export async function getStaticProps({ params, previewData }) {
             title: response.data.slices.find(slice => slice.slice_type == "title_block").primary.title[0].text,
             description: response.data.slices.find(slice => slice.slice_type == "title_block").primary.description[0].text,
             banner:{
-                width: response.data.slices.find(slice => slice.slice_type == "banner").primary.MainImage.dimensions.width,
-                height: response.data.slices.find(slice => slice.slice_type == "banner").primary.MainImage.dimensions.height,
-                url: response.data.slices.find(slice => slice.slice_type == "banner").primary.MainImage.url
+                width: banner? banner.primary.MainImage.dimensions.width : null,
+                height: banner ? banner.primary.MainImage.dimensions.height : null,
+                url: banner ? banner.primary.MainImage.url : null
             },
             content: response.data.slices.find(slice => slice.slice_type == "content").items
         }
