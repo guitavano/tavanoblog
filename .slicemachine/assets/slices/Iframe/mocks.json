@@ -1,0 +1,24 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "iframe",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Harness innovative web-readiness",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Eiusmod ea tempor veniam dolore proident id exercitation aliquip voluptate est veniam ullamco. Dolor laborum ea irure.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

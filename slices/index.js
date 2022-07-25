@@ -2,16 +2,19 @@
 
 import Banner from './Banner';
 import Content from './Content';
+import Iframe from './Iframe';
 import TitleBlock from './TitleBlock';
 
 export {
 	Banner,
 	Content,
+	Iframe,
 	TitleBlock,
 };
 
 export const components = {
 	banner: Banner,
 	content: Content,
+	iframe: Iframe,
 	title_block: TitleBlock,
 };

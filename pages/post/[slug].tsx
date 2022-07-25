@@ -68,16 +68,40 @@ export default function Post({post} : PostProps){
                     <div className={styles.textContent}>
                         {
                             post.data.content.map((block, idx) => {
-                                return(
-                                    <PrismicRichText 
-                                    key={idx}
-                                    field={block.Text}
-                                    components={{
-                                        paragraph: ({children}) => <p className='paragraph'>{children}</p>
-                                    }}
-                                    />  
-                                )
-                                
+                                if(block.Text[0].type == 'preformatted'){
+                                    let text = block.Text[0].text
+                                    if(text.includes("https://codepen.io")){
+                                        return(
+                                            <div key={idx} dangerouslySetInnerHTML={{ __html: block.Text[0].text }} />
+                                        )
+                                    }else{
+                                        return(
+                                            <PrismicRichText 
+                                            key={idx}
+                                            field={block.Text}
+                                            components={{
+                                                paragraph: ({children}) => {
+                                                        return <p className='paragraph'>{children}</p>
+                                                }
+                                            }}
+                                            />  
+                                        )
+                                    }
+                                    
+                                }else{
+                                    return(
+                                        <PrismicRichText 
+                                        key={idx}
+                                        field={block.Text}
+                                        components={{
+                                            paragraph: ({children}) => {
+                                                    return <p className='paragraph'>{children}</p>
+                                            }
+                                        }}
+                                        />  
+                                    )
+                                }
+                                     
                             })
                         }
                     </div>
