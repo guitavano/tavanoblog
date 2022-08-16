@@ -45,7 +45,7 @@ export default function Post({post} : PostProps){
                 <meta name="description" content={post.meta_description} />
                 <script type="application/ld+json">
                     {
-                    `{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://tavanoblog.com.br/${post.uid}"},"headline": "${post.data.title}", "image": "${post.data.banner.url}", "datePublished": "${post.first_publication_date}","author": {"@type": "Person","name": "${post.author}"},"publisher": {"@type": "Organization","name": "TavanoBlog"}}`
+                    `{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://tavanoblog.com.br/${post.uid}"},"headline": "${post.data.title.replaceAll(`"`,`'`)}", "image": "${post.data.banner.url}", "datePublished": "${post.first_publication_date}","author": {"@type": "Person","name": "${post.author}"},"publisher": {"@type": "Organization","name": "TavanoBlog"}}`
                     }
                 </script>
             </Head>
