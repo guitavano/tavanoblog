@@ -5,7 +5,6 @@ import { createClient } from '../prismicio'
 import Head from 'next/head'
 
 import PostList from './components/postList/postList'
-import MainPost from './components/mainPost/mainPost'
 
 interface Post {
   uid?: string;
