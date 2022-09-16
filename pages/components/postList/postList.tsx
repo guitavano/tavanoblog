@@ -31,7 +31,7 @@ export default function PostList({posts}: PostProps){
 
     const [search, setSearch] = useState('')
 
-    const filteredPosts = search.length > 0
+    let filteredPosts = search.length > 0
     ? posts.results.filter(post => {
         if(post.data.title.toLowerCase().includes(search)){
             return post
@@ -40,7 +40,7 @@ export default function PostList({posts}: PostProps){
             return post
         }
     })
-    : [...posts.results]
+    : (posts ? [...posts.results] : [])
 
     return(
         <>
