@@ -3,6 +3,13 @@
     margin: 0 auto;
     padding: 0 1rem;
 
+    h1{
+        color: var(--heading);
+        text-align: center;
+        font-size: 42px;
+        margin-top: 2rem;
+    }
+
     span {
         margin-top: 2rem;
         color: var(--highlight);

@@ -1,12 +1,11 @@
 import styles from './home.module.scss'
-import { FiUser, FiCalendar } from 'react-icons/fi'
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 
 import { createClient } from '../prismicio'
 
 import Head from 'next/head'
-import Link from 'next/link'
+
+import PostList from './components/postList/postList'
+import MainPost from './components/mainPost/mainPost'
 
 interface Post {
   uid?: string;
@@ -37,33 +36,7 @@ export default function Home({ posts }: HomeProps) {
         <meta name="description" content="Blog de tecnologia com diversos assuntos sobre Desenvolvimento Web, E-commerce, Marketing Digital, Performance e muito mais!" />
       </Head>
       <main className={styles.container}>
-        <div className={styles.posts}>
-          {
-            posts.results.map(post => {
-              return (
-                <Link href={`/post/${post.uid}`} key={post.uid}>
-                  <a>
-                    <strong>{post.data.title}</strong>
-                    <p>{post.data.subtitle}</p>
-                    <div className={styles.info}>
-                      <div className={`category ${post.data.category}`}>
-                        <p>{post.data.category}</p>
-                      </div>
-                      <div>
-                        <FiCalendar />
-                        <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
-                      </div>
-                      <div>
-                        <FiUser />
-                        <p>{post.data.author}</p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              )
-            })
-          }
-        </div>
+        <PostList posts={posts}></PostList>
       </main>
     </>
   )

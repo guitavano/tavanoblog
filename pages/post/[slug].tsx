@@ -9,6 +9,8 @@ import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
+import Link from 'next/link'
+
 import {useRouter} from 'next/router'
 
 interface Post{
@@ -59,6 +61,11 @@ export default function Post({post} : PostProps){
                         <FiCalendar />
                         <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
                       </div>
+                      <Link href={`/categorie/${post.category}`}>
+                            <div className={`${styles.category} category ${post.category}`}>
+                                    <p>{post.category}</p>
+                            </div>
+                        </Link>
                     </div>
 
                     {post.data.banner.url ?  <img src={post.data.banner.url} alt="" /> : null}
