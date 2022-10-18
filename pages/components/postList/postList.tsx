@@ -15,7 +15,6 @@ interface Post {
       title: string;
       subtitle: string;
       author: string;
-      image: string;
     };
 }
 
