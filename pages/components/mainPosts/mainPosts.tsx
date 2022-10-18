@@ -31,7 +31,7 @@ interface PostProps{
 
 export default function MainPost({posts} : PostProps){
 
-    let limitedPosts = [posts.results[0], posts.results[1], posts.results[2]]
+    let limitedPosts = [posts?.results[0], posts?.results[1], posts?.results[2]]
 
     return(
         <>
