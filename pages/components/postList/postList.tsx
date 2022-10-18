@@ -15,6 +15,7 @@ interface Post {
       title: string;
       subtitle: string;
       author: string;
+      image: string;
     };
 }
 
@@ -52,17 +53,12 @@ export default function PostList({posts}: PostProps){
                     <Link href={`/post/${post.uid}`} key={post.uid}>
                         <a>
                         <strong>{post.data.title}</strong>
-                        <p>{post.data.subtitle}</p>
                         <div className={styles.info}>
                             <Link href={`/categorie/${post.data.category}`}>
                                 <div className={`category ${post.data.category}`}>
                                     <p>{post.data.category}</p>
                                 </div>
                             </Link>
-                            <div>
-                                <FiCalendar />
-                                <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
-                            </div>
                             <div>
                                 <FiUser />
                                 <p>{post.data.author}</p>

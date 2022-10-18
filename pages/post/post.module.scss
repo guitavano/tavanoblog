@@ -24,7 +24,7 @@
 
     p{
         margin: 1.5rem 0;
-        color: var(--text);
+        color: var(--heading);
     }
 
     @media (max-width: 720px) {
@@ -36,7 +36,7 @@
 }
 
 .textContent{
-    padding: 1.5rem;
+
     margin: 20px 0;
     background-color: #fff;
     border-radius: 10px;
@@ -89,7 +89,7 @@
 }
 
 .info {
-    color: var(--info);
+    color: var(--heading);
     display: flex;
     align-items: center;
     margin: 0.5rem 0;
@@ -116,7 +116,7 @@
 }
 
 .author{
-    color: var(--info);
+    color: var(--heading);
     display: none;
 
     p{

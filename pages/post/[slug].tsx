@@ -57,15 +57,19 @@ export default function Post({post} : PostProps){
                     <p>{post.data.description}</p>  
 
                     <div className={styles.info}>
-                      <div>
-                        <FiCalendar />
-                        <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
-                      </div>
                       <Link href={`/categorie/${post.category}`}>
                             <div className={`${styles.category} category ${post.category}`}>
                                     <p>{post.category}</p>
                             </div>
-                        </Link>
+                      </Link>
+                      <div>
+                        <FiCalendar />
+                        <p>{format(new Date(post.first_publication_date), "dd MMM uuuu", { locale: ptBR })}</p>
+                      </div>
+                      <div>
+                        <FiUser />
+                        <p>{post.author}</p>
+                    </div>
                     </div>
 
                     {post.data.banner.url ?  <img src={post.data.banner.url} alt="" /> : null}

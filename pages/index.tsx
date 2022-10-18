@@ -5,6 +5,8 @@ import { createClient } from '../prismicio'
 import Head from 'next/head'
 
 import PostList from './components/postList/postList'
+import MainPost from './components/mainPosts/mainPosts'
+import CategoryCarousel from './components/categoryCarousel/categoryCarousel'
 
 interface Post {
   uid?: string;
@@ -14,6 +16,7 @@ interface Post {
     title: string;
     subtitle: string;
     author: string;
+    image: string
   };
 }
 
@@ -35,6 +38,8 @@ export default function Home({ posts }: HomeProps) {
         <meta name="description" content="Blog de tecnologia com diversos assuntos sobre Desenvolvimento Web, E-commerce, Marketing Digital, Performance e muito mais!" />
       </Head>
       <main className={styles.container}>
+        <MainPost posts={posts}></MainPost>
+        <CategoryCarousel></CategoryCarousel>
         <PostList posts={posts}></PostList>
       </main>
     </>
@@ -44,15 +49,23 @@ export default function Home({ posts }: HomeProps) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
+  
+
   const response = await client.getByType('posts',{
     orderings: {
     field: 'document.first_publication_date',
     direction: 'desc'
   }})
 
+
   const posts: Posts = {
     next_page: response.next_page,
     results: response.results.map(result => {
+
+      let bannerExists = result.data.slices.find(slice => slice.slice_type == "banner")
+      
+      let banner = bannerExists ? bannerExists.primary.MainImage.url : "default"
+
       return {
         uid: result.uid,
         first_publication_date: result.first_publication_date,
@@ -61,6 +74,7 @@ export async function getStaticProps({ previewData }) {
           author: result.data.author[0].text,
           title: result.data.slices.find(slice => slice.slice_type == "title_block").primary.title[0].text,
           subtitle: result.data.slices.find(slice => slice.slice_type == "title_block").primary.description[0].text,
+          image: banner
         }
       }
     })

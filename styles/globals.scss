@@ -38,8 +38,8 @@ a {
 
 :root {
   --highlight: #f30f8b;
-  --heading: #F8F8F8;
-  --bg: #1A1D23;
+  --heading: #1A1D23;
+  --bg: rgb(246, 246, 246);
   --info: #BBBBBB;
   --body: #D7D7D7;
   --text: #eeeeee;
@@ -48,7 +48,8 @@ a {
 .category{
   font-weight: bold;
   padding: 0.15rem 0.5rem;
-  border-radius: 2px;
+  border-radius: 8px;
+  color: white;
 }
 
 .VTEX{
@@ -60,7 +61,7 @@ a {
 }
 
 .SEO{
-  background-color: rgb(210, 75, 2);
+  background-color: orange;
 }
 
 .HTML{
@@ -72,4 +73,8 @@ a {
   p{
     color: black !important;
   }
+}
+
+.React{
+  background-color: #61DBFB;
 }
