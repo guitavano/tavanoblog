@@ -41,6 +41,7 @@ export default function Home({ posts }: HomeProps) {
         <MainPost posts={posts}></MainPost>
         <CategoryCarousel></CategoryCarousel>
         <PostList posts={posts}></PostList>
+        <div className="teste-tavano"></div>
       </main>
     </>
   )
