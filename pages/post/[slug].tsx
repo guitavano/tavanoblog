@@ -74,7 +74,7 @@ export default function Post({post} : PostProps){
 
                     <div className={styles.imageContainer}>
                         {post.data.banner.url ? 
-                        <Image placeholder='blur' blurDataURL={post.data.banner.url} src={post.data.banner.url} alt={post.data.title} fill></Image>
+                        <Image src={post.data.banner.url} alt={post.data.title} fill></Image>
                         : null}
                     </div>
 
