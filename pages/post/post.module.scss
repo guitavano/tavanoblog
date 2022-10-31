@@ -13,6 +13,7 @@
     img{
         max-width: 100%;
         border-radius: 10px;
+        position: initial !important;
     }
 
     h1{
@@ -123,5 +124,13 @@
 
     p{
         margin: 0;
+    }
+}
+
+.imageContainer{
+    height: 525px;
+
+    @media (max-width: 720px) {
+        height: 55vw;
     }
 }

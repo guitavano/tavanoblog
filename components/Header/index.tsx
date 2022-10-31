@@ -7,9 +7,7 @@ export default function Header() {
             <header className={styles.headerContainer}>
                 <div className={styles.headerContent}>
                     <Link href="/">
-                        <a >
-                            <h1>TavanoBlog</h1>
-                        </a>
+                        <h1>TavanoBlog</h1>
                     </Link>
                 </div>
             </header>

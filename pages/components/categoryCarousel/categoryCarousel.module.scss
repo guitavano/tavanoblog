@@ -1,14 +1,17 @@
 .categoryCarouselContainer{
     width: 100%;
-
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
     margin: 50px 0;
     padding: 5px 0;
-    overflow: auto;
 
-    > div{
+    height: 190px;
+
+    > a{
+        height: 100%;
+    }
+
+    > a{
         width: 180px;
         background-color: #F8F8F8;
         box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
@@ -31,8 +34,13 @@
     }
 
     @media (max-width: 720px) {
+        overflow: auto;
         >div{
             margin: 0 20px;
         } 
+        > a{
+            margin-right: 30px;
+        }
+    
     }
 }

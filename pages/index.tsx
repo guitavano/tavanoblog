@@ -41,7 +41,6 @@ export default function Home({ posts }: HomeProps) {
         <MainPost posts={posts}></MainPost>
         <CategoryCarousel></CategoryCarousel>
         <PostList posts={posts}></PostList>
-        <div className="teste-tavano"></div>
       </main>
     </>
   )
@@ -50,14 +49,11 @@ export default function Home({ posts }: HomeProps) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  
-
   const response = await client.getByType('posts',{
     orderings: {
     field: 'document.first_publication_date',
     direction: 'desc'
   }})
-
 
   const posts: Posts = {
     next_page: response.next_page,

@@ -49,22 +49,21 @@ export default function PostList({posts}: PostProps){
                 {
                 filteredPosts.map(post => {
                     return (
-                    <Link href={`/post/${post.uid}`} key={post.uid}>
-                        <a>
-                        <strong>{post.data.title}</strong>
-                        <div className={styles.info}>
-                            <Link href={`/categorie/${post.data.category}`}>
-                                <div className={`category ${post.data.category}`}>
-                                    <p>{post.data.category}</p>
+                        <div>
+                            <Link className={styles.listContent} href={`/post/${post.uid}`} key={post.uid}>
+                                <strong>{post.data.title}</strong>
+                                <div className={styles.info}>
+                                    <div>
+                                        <FiUser />
+                                        <p>{post.data.author}</p>
+                                    </div>
                                 </div>
                             </Link>
-                            <div>
-                                <FiUser />
-                                <p>{post.data.author}</p>
-                            </div>
+                            <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
+                                <p>{post.data.category}</p>
+                            </Link>
                         </div>
-                        </a>
-                    </Link>
+                    
                     )
                 })
                 }

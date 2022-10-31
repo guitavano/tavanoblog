@@ -1,4 +1,5 @@
 import styles from './postImage.module.scss'
+import Image from 'next/image'
 
 
 export default function PostImage({imageUrl, imageAlt}){
@@ -11,7 +12,7 @@ export default function PostImage({imageUrl, imageAlt}){
         )
     }else{
         return(
-            <img src={imageUrl} alt={imageAlt} className={styles.imageReal}/>
+            <Image src={imageUrl} alt={imageAlt} className={styles.imageReal} fill/>
         )
     }
 

@@ -73,11 +73,12 @@
     }
 
     img{
-        height: 75%;
+        height: 75% !important;
     }
 
     @media (max-width: 720px) {
         width: calc(100% - 20px);
+        height: 65vw;
         h2{
             font-size: 1100%;
         }
@@ -89,6 +90,9 @@
     flex-direction: column;
     height: 25%;
     justify-content: center;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
 }
 
 .subImages{
@@ -101,8 +105,10 @@
     }
 
     strong{
-        padding: 25px 15px;
+        padding: 20px 15px;
         font-size: 15px;
+        position: absolute;
+        bottom: 0px;
         @media (max-width: 720px) {
             padding: 15px;
         }
@@ -114,11 +120,20 @@
 
     @media (max-width: 720px) {
         width: calc(100% - 20px);
-        height: auto;
+        height: 65vw;
 
+        img{
+            max-height: 75%;
+        }
 
         h2{
             font-size: 450%;
+        }
+
+        strong{
+            height: 25%;
+            display: flex;
+            align-items: center;
         }
 
     }

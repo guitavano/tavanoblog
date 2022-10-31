@@ -4,12 +4,12 @@ import { createClient } from './../../prismicio'
 import { GetStaticPaths } from 'next'
 import { PrismicRichText } from '@prismicio/react'
 import Head from 'next/head';
-import { Children } from 'react';
 import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 import Link from 'next/link'
+import Image from 'next/image';
 
 import {useRouter} from 'next/router'
 
@@ -72,7 +72,13 @@ export default function Post({post} : PostProps){
                     </div>
                     </div>
 
-                    {post.data.banner.url ?  <img src={post.data.banner.url} alt="" /> : null}
+                    <div className={styles.imageContainer}>
+                        {post.data.banner.url ? 
+                        <Image placeholder='blur' blurDataURL={post.data.banner.url} src={post.data.banner.url} alt={post.data.title} fill></Image>
+                        : null}
+                    </div>
+
+                    
 
                     
 
