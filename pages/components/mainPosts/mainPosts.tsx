@@ -39,8 +39,8 @@ export default function MainPost({posts} : PostProps){
                     limitedPosts?.map((post, idx) => {
                         if(idx == 0){
                             return(
-                                <div className={styles.mainImage}>
-                                    <Link href={`/post/${post.uid}`} key={post.uid}>
+                                <div className={styles.mainImage} key={post.uid}>
+                                    <Link href={`/post/${post.uid}`}>
                                         <PostImage 
                                         imageUrl={post.data.image}
                                         imageAlt={post.data.title}></PostImage>
@@ -55,8 +55,8 @@ export default function MainPost({posts} : PostProps){
                             )
                         }else{
                             return(
-                                <div className={styles.subImages}>
-                                    <Link href={`/post/${post.uid}`} key={post.uid}>
+                                <div className={styles.subImages} key={post.uid}>
+                                    <Link href={`/post/${post.uid}`}>
                                         <PostImage
                                         imageUrl={post.data.image}
                                         imageAlt={post.data.title}></PostImage>

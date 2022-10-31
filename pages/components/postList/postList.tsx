@@ -49,8 +49,8 @@ export default function PostList({posts}: PostProps){
                 {
                 filteredPosts.map(post => {
                     return (
-                        <div>
-                            <Link className={styles.listContent} href={`/post/${post.uid}`} key={post.uid}>
+                        <div key={post.uid}>
+                            <Link className={styles.listContent} href={`/post/${post.uid}`}>
                                 <strong>{post.data.title}</strong>
                                 <div className={styles.info}>
                                     <div>
