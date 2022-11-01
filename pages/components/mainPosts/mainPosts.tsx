@@ -4,6 +4,7 @@ import styles from './mainPosts.module.scss'
 import Link from 'next/link'
 
 import PostImage from '.././postImage/postImage'
+import Tilt from './../../../components/VanillaTilt/index'
 
 interface Post {
     uid?: string;
@@ -31,6 +32,18 @@ export default function MainPost({posts} : PostProps){
 
     let limitedPosts = posts ? [posts?.results[0], posts?.results[1], posts?.results[2]] : undefined
 
+    const options = {
+        scale: 1,
+        speed: 3000,
+        max: 5
+    };
+
+    const optionsMain = {
+        scale: 1,
+        speed: 3000,
+        max: 2
+    };
+
     return(
         <>
             <div className={styles.mainImagesContainer}>
@@ -39,7 +52,7 @@ export default function MainPost({posts} : PostProps){
                     limitedPosts?.map((post, idx) => {
                         if(idx == 0){
                             return(
-                                <div className={styles.mainImage} key={post.uid}>
+                                <Tilt className={styles.mainImage} key={post.uid} options={optionsMain}>
                                     <Link href={`/post/${post.uid}`}>
                                         <PostImage 
                                         imageUrl={post.data.image}
@@ -51,11 +64,11 @@ export default function MainPost({posts} : PostProps){
                                     <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
                                             <p>{post.data.category}</p>
                                     </Link>
-                                </div>
+                                </Tilt>
                             )
                         }else{
                             return(
-                                <div className={styles.subImages} key={post.uid}>
+                                <Tilt className={styles.subImages} key={post.uid} options={options}>
                                     <Link href={`/post/${post.uid}`}>
                                         <PostImage
                                         imageUrl={post.data.image}
@@ -65,7 +78,7 @@ export default function MainPost({posts} : PostProps){
                                     <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
                                         <p>{post.data.category}</p>
                                     </Link>
-                                </div>
+                                </Tilt>
                             )
                         }
                         
