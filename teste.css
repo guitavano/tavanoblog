@@ -1,0 +1,211 @@
+.product-flags .castrol-fixo,
+.product-item__flags .castrol-fixo {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .castrol-fixo:before,
+.product-item__flags .castrol-fixol:before {
+ content: "COPA BLACK: FRETE FIXO R$9,90";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+
+.product-flags .suspensao-cofap-kyb-nakata-monroe-black,
+.product-item__flags .suspensao-cofap-kyb-nakata-monroe-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .suspensao-cofap-kyb-nakata-monroe-black:before,
+.product-item__flags .suspensao-cofap-kyb-nakata-monroe-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .itens-lucas-black,
+.product-item__flags .itens-lucas-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .itens-lucas-black:before,
+.product-item__flags .itens-lucas-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .pesado-pirelli-frete-gratis,
+.product-item__flags .pesado-pirelli-frete-gratis {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .pesado-pirelli-frete-gratis:before,
+.product-item__flags .pesado-pirelli-frete-gratis:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .motor-mahle-metal-black,
+.product-item__flags .motor-mahle-metal-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .motor-mahle-metal-black:before,
+.product-item__flags .motor-mahle-metal-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .pneus-moto-fg-black,
+.product-item__flags .pneus-moto-fg-black {
+background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .pneus-moto-fg-black:before,
+.product-item__flags .pneus-moto-fg-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .trw-sachs-luk-frete-brasil,
+.product-item__flags .trw-sachs-luk-frete-brasil {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .trw-sachs-luk-frete-brasil:before,
+.product-item__flags .trw-sachs-luk-frete-brasil:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .mann-tecfil,
+.product-item__flags .mann-tecfil {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .mann-tecfil:before,
+.product-item__flags .mann-tecfil:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+
+.product-flags .leve-frete-sul-sudeste-black,
+.product-item__flags .leve-frete-sul-sudeste-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .leve-frete-sul-sudeste-black:before,
+.product-item__flags .leve-frete-sul-sudeste-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .motor-partida-sul-sudeste-black,
+.product-item__flags .motor-partida-sul-sudeste-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .motor-partida-sul-sudeste-black:before,
+.product-item__flags .motor-partida-sul-sudeste-black:before {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .itens-cris-frete-fixo-sul-sudeste,
+.product-item__flags .itens-cris-frete-fixo-sul-sudeste {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .itens-cris-frete-fixo-sul-sudeste:before,
+.product-item__flags .itens-cris-frete-fixo-sul-sudeste {
+ content: "OFERTA BLACK: FRETE R$9,90 SUL SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .itens-cris-frete-fixo-brasil,
+.product-item__flags .itens-cris-frete-fixo-brasil {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .itens-cris-frete-fixo-brasil:before,
+.product-item__flags .itens-cris-frete-fixo-brasil {
+ content: "OFERTA BLACK: FRETE R$9,90 BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .itens-cris-sul-sudeste-black,
+.product-item__flags .itens-cris-sul-sudeste-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .itens-cris-sul-sudeste-black:before,
+.product-item__flags .itens-cris-sul-sudeste-black {
+ content: "OFERTA BLACK: FRETE GRÁTIS SUL E SUDESTE";
+ font-size: 11px;
+ font-weight: bolder;
+}
+
+.product-flags .itens-cris-frete-brasil-black,
+.product-item__flags .itens-cris-frete-brasil-black {
+ background: #191919;
+ color: yellow;
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+}
+.product-flags .itens-cris-frete-brasil-black:before,
+.product-item__flags .itens-cris-frete-brasil-black {
+ content: "OFERTA BLACK: FRETE GRÁTIS BRASIL";
+ font-size: 11px;
+ font-weight: bolder;
+}
