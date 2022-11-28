@@ -105,6 +105,10 @@
     }
 
     strong{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28%;
         padding: 20px 15px;
         font-size: 15px;
         position: absolute;
