@@ -59,7 +59,7 @@ export default function PostList({posts}: PostProps){
                                     </div>
                                 </div>
                             </Link>
-                            <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
+                            <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
                                 <p>{post.data.category}</p>
                             </Link>
                         </div>

@@ -61,7 +61,7 @@ export default function MainPost({posts} : PostProps){
                                             <strong>{post.data.title}</strong>
                                         </div>
                                     </Link>
-                                    <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
+                                    <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
                                             <p>{post.data.category}</p>
                                     </Link>
                                 </Tilt>
@@ -75,7 +75,7 @@ export default function MainPost({posts} : PostProps){
                                         imageAlt={post.data.title}></PostImage>
                                         <strong>{post.data.title}</strong>
                                     </Link>
-                                    <Link className={`category ${styles.category} ${post.data.category}`} href={`/categorie/${post.data.category}`}>
+                                    <Link className={`category ${styles.category} ${post.data.category}`} href={`/categoriy/${post.data.category}`}>
                                         <p>{post.data.category}</p>
                                     </Link>
                                 </Tilt>

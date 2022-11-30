@@ -57,7 +57,7 @@ export default function Post({post} : PostProps){
                     <p>{post.data.description}</p>  
 
                     <div className={styles.info}>
-                      <Link href={`/categorie/${post.category}`}>
+                      <Link href={`/category/${post.category}`}>
                             <div className={`${styles.category} category ${post.category}`}>
                                     <p>{post.category}</p>
                             </div>
