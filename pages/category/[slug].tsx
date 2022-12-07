@@ -18,6 +18,7 @@ interface Post {
       title: string;
       subtitle: string;
       author: string;
+      image: string;
     };
 }
 
@@ -33,7 +34,6 @@ interface CategorieProps {
 
 export default function Categorie({ posts, slug }: CategorieProps){
 
-
     return(
         <>
             <Head>
@@ -42,7 +42,7 @@ export default function Categorie({ posts, slug }: CategorieProps){
             </Head>
             <main className={styles.container}>
                 <h1>{slug.toUpperCase()}</h1>
-                <PostList posts={posts}></PostList>
+                <PostList isHome={false} posts={posts}></PostList>
             </main>     
         </>
     )
@@ -75,6 +75,11 @@ export async function getStaticProps({ params, previewData }) {
     const posts: Posts = {
       next_page: response.next_page,
       results: response.results.map(result => {
+
+        let bannerExists = result.data.slices.find(slice => slice.slice_type == "banner")
+      
+        let banner = bannerExists ? bannerExists.primary.MainImage.url : "default"
+
         return {
           uid: result.uid,
           first_publication_date: result.first_publication_date,
@@ -83,6 +88,7 @@ export async function getStaticProps({ params, previewData }) {
             author: result.data.author[0].text,
             title: result.data.slices.find(slice => slice.slice_type == "title_block").primary.title[0].text,
             subtitle: result.data.slices.find(slice => slice.slice_type == "title_block").primary.description[0].text,
+            image: banner
           }
         }
       })

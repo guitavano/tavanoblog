@@ -7,6 +7,7 @@ import Head from 'next/head'
 import PostList from './components/postList/postList'
 import MainPost from './components/mainPosts/mainPosts'
 import CategoryCarousel from './components/categoryCarousel/categoryCarousel'
+import Newsletter from './components/newsletter/newsletter'
 
 interface Post {
   uid?: string;
@@ -31,6 +32,7 @@ interface HomeProps {
 
 
 export default function Home({ posts }: HomeProps) {
+
   return (
     <>
       <Head>
@@ -40,7 +42,8 @@ export default function Home({ posts }: HomeProps) {
       <main className={styles.container}>
         <MainPost posts={posts}></MainPost>
         <CategoryCarousel></CategoryCarousel>
-        <PostList posts={posts}></PostList>
+        <Newsletter></Newsletter>
+        <PostList isHome={true} posts={posts}></PostList>
       </main>
     </>
   )

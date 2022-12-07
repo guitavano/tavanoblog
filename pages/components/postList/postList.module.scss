@@ -1,9 +1,14 @@
 
 .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
     margin-bottom: 2rem;
 
     input{
-        width: 100%;
+        display: none;
+        grid-column-start: 1;
+        grid-column-end: 4;
         height: 70px;
         outline: none;
         border-radius: 5px;
@@ -13,6 +18,7 @@
         font-size: 1.5rem;
         color: #13171d;
         box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
+        margin-bottom: 20px;
 
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: var(--heading);
@@ -20,34 +26,10 @@
         }
     }
 
-    > div {
-        display: block;
-        position: relative;
-        text-decoration: none;
-        margin-top: 2rem;
-        border-radius: 10px;
-        padding: 15px 25px;
-        background-color: #F8F8F8;
-        transition: 0.3s;
-        box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
-
-        &:hover{
-            box-shadow: 0px 4px 8px -3px rgb(0 0 0 / 50%);
-        }
-
-        strong {
-            display: block;
-            font-size: 1.5rem;
-            line-height: 2rem;
-            transition: 0.5s;
-            cursor: pointer;
-
-            color: var(--heading);
-        }
-
-    }
 
     @media (max-width: 720px) {
+        grid-template-columns: 1fr;
+        column-gap: 0px;
         a{
             margin-top: 1.5rem;
         }
@@ -55,27 +37,61 @@
 
 }
 
-.info {
-    color: var(--info);
+.cardAtList{
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    flex-direction: column;
+    height: 260px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    align-self: end;
+    background-color: #F8F8F8;
+    box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 
-    p {
-        font-size: 0.8rem;
-        margin: 0 1rem 0 0;
-
+    h2{
+        font-size: 700%;
     }
 
-    div {
-        display: flex;
-        align-items: center;
-        margin: 0 1rem 0.75rem 0;
-    }
-
-    svg {
-        margin: 0 0.5rem 0 0;
+    strong{
         color: var(--heading);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28%;
+        padding: 20px 15px;
+        font-size: 15px;
+        position: absolute;
+        bottom: 0px;
+        @media (max-width: 720px) {
+            padding: 15px;
+        }
+    } 
+    
+    img{
+        max-height: 190px;
+    }
+
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 65vw;
+
+        img{
+            max-height: 75%;
+        }
+
+        h2{
+            font-size: 450%;
+        }
+
+        strong{
+            color: var(--heading);
+            height: 25%;
+            display: flex;
+            align-items: center;
+        }
+
     }
 
 }
@@ -94,14 +110,7 @@
     top: 10px;
     right: 10px;
 
-    p{
-        color: #F8F8F8;
-        margin: 0.2rem 0;
-    }
-
     @media (max-width: 720px) {
-        top: auto;
-        bottom: 15px;
-        right: 15px;
+        display: none;
     }
 }

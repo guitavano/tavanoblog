@@ -63,6 +63,7 @@
     }
 
     strong{
+        color: var(--heading);
         padding: 10px 20px;
         font-size: 32px;
 
@@ -105,6 +106,7 @@
     }
 
     strong{
+        color: var(--heading);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -135,6 +137,7 @@
         }
 
         strong{
+            color: var(--heading);
             height: 25%;
             display: flex;
             align-items: center;

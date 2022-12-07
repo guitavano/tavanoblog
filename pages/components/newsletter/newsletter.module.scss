@@ -1,0 +1,83 @@
+.NewsletterContainer{
+    display: none;
+    h1{
+        color: var(--heading);
+        font-size: 66px;
+        padding-left: 20px;
+    }
+    p{
+        color: var(--heading);
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    margin-bottom: 50px;
+}
+
+.Email{
+    display: block;
+    width: 70%;
+    height: 70px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #F8F8F8;
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    color: #13171d;
+
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--heading);
+        opacity: 0.9; /* Firefox */
+    }
+}
+
+.Register{
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
+    margin-top: 20px;
+    overflow: hidden;
+
+    button{
+        height: 70px;
+        width: 30%;
+        cursor: pointer;
+        background-color: var(--heading);
+        color: var(--bg);
+        font-weight: 700;
+        font-size: 26px;
+        border: none;
+        transition: all 0.2s linear 0s;
+        position: relative;
+
+        &:before {
+            content: "➤";
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -2px;
+            right: -70px;
+            width: 70px;
+            height: calc(100% + 4px);
+            background-color: var(--bg);
+            color: var(--heading);
+            transition: all 0.2s linear 0s;
+            text-align: center;
+            border-radius: 0 10px 10px 0;
+          }
+
+        &:hover {
+        text-indent: -30px;
+        
+            &:before {
+                right: 0;
+                text-indent: 0px;
+            }
+        }
+    }
+    
+    
+}

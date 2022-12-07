@@ -7,6 +7,9 @@ import { ptBR } from 'date-fns/locale';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
+import Tilt from './../../../components/VanillaTilt/index'
+import PostImage from '.././postImage/postImage'
+
 interface Post {
     uid?: string;
     first_publication_date: string | null;
@@ -15,6 +18,7 @@ interface Post {
       title: string;
       subtitle: string;
       author: string;
+      image: string;
     };
 }
 
@@ -25,22 +29,38 @@ interface Posts {
 
 interface PostProps{
     posts: Posts;
+    isHome: boolean;
 }
 
-export default function PostList({posts}: PostProps){
+export default function PostList({posts, isHome}: PostProps){
 
     const [search, setSearch] = useState('')
 
-    let filteredPosts = search.length > 0
-    ? posts.results.filter(post => {
-        if(post.data.title.toLowerCase().includes(search)){
-            return post
-        }
-        if(post.data.category.toLowerCase().includes(search)){
-            return post
-        }
-    })
-    : (posts ? [...posts.results] : [])
+    const options = {
+        scale: 1,
+        speed: 3000,
+        max: 5
+    };
+
+    // let filteredPosts = search.length > 0
+    // ? posts.results.filter(post => {
+    //     if(post.data.title.toLowerCase().includes(search)){
+    //         return post
+    //     }
+    //     if(post.data.category.toLowerCase().includes(search)){
+    //         return post
+    //     }
+    // })
+    // : (posts ?
+    //     [...posts.results.filter((post,idx) => ![0,1,2].includes(idx))] 
+    //     : [])
+
+    let filteredPosts = []
+    if(isHome){
+         filteredPosts = (posts ? [...posts.results.filter((post,idx) => ![0,1,2].includes(idx))]  : []) 
+    }else{
+        filteredPosts = (posts ? [...posts.results]  : []) 
+    }
 
     return(
         <>
@@ -49,21 +69,19 @@ export default function PostList({posts}: PostProps){
                 {
                 filteredPosts.map(post => {
                     return (
-                        <div key={post.uid}>
-                            <Link className={styles.listContent} href={`/post/${post.uid}`}>
-                                <strong>{post.data.title}</strong>
-                                <div className={styles.info}>
-                                    <div>
-                                        <FiUser />
-                                        <p>{post.data.author}</p>
-                                    </div>
-                                </div>
-                            </Link>
-                            <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
-                                <p>{post.data.category}</p>
-                            </Link>
-                        </div>
-                    
+                        <>
+                            <Tilt className={styles.cardAtList} key={post.uid} options={options}>
+                                <Link href={`/post/${post.uid}`}>
+                                    <PostImage
+                                    imageUrl={post.data.image}
+                                    imageAlt={post.data.title}></PostImage>
+                                    <strong>{post.data.title}</strong>
+                                </Link>
+                                <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
+                                    <p>{post.data.category}</p>
+                                </Link>
+                            </Tilt>
+                        </>
                     )
                 })
                 }
