@@ -1,17 +1,22 @@
 .NewsletterContainer{
-    display: none;
+    display: block;
+    position: relative;
     h1{
         color: var(--heading);
-        font-size: 66px;
+        font-size: 50px;
         padding-left: 20px;
     }
-    p{
-        color: var(--heading);
-        font-size: 24px;
-        padding-left: 20px;
-    }
-
     margin-bottom: 50px;
+}
+
+.SubTitle{
+    color: var(--heading);
+    font-size: 22px;
+    padding-left: 20px;
+
+    @media (max-width: 720px) {
+        font-size: 18px;
+    }
 }
 
 .Email{
@@ -30,10 +35,17 @@
         color: var(--heading);
         opacity: 0.9; /* Firefox */
     }
+
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 80px;
+    }
+    
 }
 
 .Register{
     display: flex;
+    flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 0px 2px 6px -3px rgb(0 0 0 / 50%);
     margin-top: 20px;
@@ -48,36 +60,56 @@
         font-weight: 700;
         font-size: 26px;
         border: none;
-        transition: all 0.2s linear 0s;
+        transition: 0.2s;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &:before {
-            content: "➤";
-            font-size: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: -2px;
-            right: -70px;
-            width: 70px;
-            height: calc(100% + 4px);
-            background-color: var(--bg);
-            color: var(--heading);
-            transition: all 0.2s linear 0s;
-            text-align: center;
-            border-radius: 0 10px 10px 0;
-          }
+        &:hover{
+            opacity: 0.9;
+        }
 
-        &:hover {
-        text-indent: -30px;
-        
-            &:before {
-                right: 0;
-                text-indent: 0px;
-            }
+        @media (max-width: 720px) {
+            width: 100%;
         }
     }
     
+}
+
+.Sending{
+    display: block;
+    width: 35px;
+    height: 35px;
+    border: 6px solid transparent;
+    border-top-color: var(--bg);
+    margin: auto !important;
+    border-radius: 100%;
+    animation: lds-dual-ring 0.8s linear infinite;
     
+}
+
+@keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.ErrorMessage{
+    position: absolute;
+    right: 0;
+    width: 30%;
+    padding: 0 !important;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 18px;
+    color: rgb(194, 0, 0);
+    font-weight: 700;
+
+    @media (max-width: 720px) {
+        width: 100%;
+    }
 }

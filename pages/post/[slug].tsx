@@ -13,6 +13,8 @@ import Image from 'next/image';
 
 import {useRouter} from 'next/router'
 
+import Newsletter from './../components/newsletter/newsletter'
+
 interface Post{
     uid: string;
     meta_title: string;
@@ -78,10 +80,6 @@ export default function Post({post} : PostProps){
                         : null}
                     </div>
 
-                    
-
-                    
-
                     <div className={styles.textContent}>
                         {
                             post.data.content.map((block, idx) => {
@@ -127,9 +125,10 @@ export default function Post({post} : PostProps){
                         <FiUser />
                         <p>{post.author}</p>
                     </div>
-   
+                    <Newsletter></Newsletter>
                 </div>
             </div>
+
             
         </>
     )
