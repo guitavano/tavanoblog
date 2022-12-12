@@ -60,7 +60,8 @@ export default function Newsletter(){
                             onInput={(e) => {
                                 setSent(false)
                                 setErrorMessage("")
-                                setEmail(e.target.value)
+                                const element = e.target as HTMLInputElement
+                                setEmail(element.value)
                             }}
                             required
                         />
