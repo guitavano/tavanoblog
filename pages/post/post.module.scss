@@ -93,6 +93,16 @@
             font-size: 1rem;
         }
     }
+
+    em{
+        font-size: .9em;
+        font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+        background-color: #eaeaea;
+        padding: 2px;
+        margin: 2px;
+        border: 1px solid #c0c0c0;
+        border-radius: 5px;
+    }
 }
 
 .info {
