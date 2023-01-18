@@ -58,6 +58,14 @@
         padding-top: 1.5rem;
         color: #000;
     }
+    ul{
+        li{
+            a{
+                font-weight: bold;
+                color: var(--highlight);
+            }
+        }
+    }
 
     p{
         margin: 1.5rem 0;
