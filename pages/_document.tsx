@@ -5,6 +5,17 @@ export default class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RWRJE2WYS"></script>
+                <script dangerouslySetInnerHTML={{
+                    __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-1RWRJE2WYS');
+                    `
+                }} />
+
                     <link rel="shortcut icon" href="./../TavanoBlogIcon.ico" type="image/x-icon" />
                     
                     <meta name="google-site-verification" content="xKxIrkDJaQqe7DOYQG4sDCw4P4y98BS8OgucZzL4CFs" />
