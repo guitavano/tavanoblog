@@ -10,11 +10,6 @@
     line-height: 1.75rem;
     font-size: 1.125rem;
 
-    img{
-        max-width: 100%;
-        border-radius: 10px;
-        position: initial !important;
-    }
 
     h1{
         font-size: 2.5rem;
@@ -154,5 +149,10 @@
 
     @media (max-width: 720px) {
         height: 55vw;
+    }
+    img{
+        max-width: 100%;
+        border-radius: 10px;
+        position: initial !important;
     }
 }

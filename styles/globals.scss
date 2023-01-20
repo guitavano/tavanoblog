@@ -45,11 +45,17 @@ a {
   --text: #eeeeee;
 }
 
+
+
 .category{
   font-weight: bold;
   padding: 0.15rem 0.5rem;
   border-radius: 8px;
   color: white;
+}
+
+.postContainer  .postList .category{
+  display: none;
 }
 
 .category p{

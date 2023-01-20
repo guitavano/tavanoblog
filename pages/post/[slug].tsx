@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import PostList from './../components/postList/postList'
 
 import Link from 'next/link'
 import Image from 'next/image';
@@ -34,11 +35,30 @@ interface Post{
     }
 }
 
-interface PostProps{
-    post: Post;
-}
+interface PostAtList {
+    uid?: string;
+    first_publication_date: string | null;
+    data: {
+      category: string;
+      title: string;
+      subtitle: string;
+      author: string;
+      image: string
+    };
+  }
+  
+  interface Posts {
+    next_page: string;
+    results: PostAtList[];
+  }
 
-export default function Post({post} : PostProps){
+  interface PostProps{
+    post: Post;
+    postList: Posts;
+}
+  
+
+export default function Post({post, postList} : PostProps){
 
     const router = useRouter()
 
@@ -53,7 +73,7 @@ export default function Post({post} : PostProps){
                     }
                 </script>
             </Head>
-            <div className={styles.container}>
+            <div className={`${styles.container} postContainer `}>
                 <div className={styles.content}>
                     <h1>{post.data.title}</h1>    
                     <p>{post.data.description}</p>  
@@ -125,6 +145,10 @@ export default function Post({post} : PostProps){
                         <FiUser />
                         <p>{post.author}</p>
                     </div>
+                    <div className='postList'>
+                        <h2>Mais posts</h2>
+                    <PostList isHome={false} posts={postList}></PostList>
+                    </div>
                     <Newsletter></Newsletter>
                 </div>
             </div>
@@ -171,7 +195,39 @@ export async function getStaticProps({ params, previewData }) {
 
     } 
 
+    const clientList = createClient({ previewData })
+
+    const responseList = await clientList.getByType('posts',{
+      orderings: {
+      field: 'document.first_publication_date',
+      direction: 'desc',
+    },
+    pageSize: 3
+    })
+
+    const postList : Posts = {
+        next_page: responseList.next_page,
+        results: responseList.results.map(result => {
+    
+          let bannerExists = result.data.slices.find(slice => slice.slice_type == "banner")
+          
+          let banner = bannerExists ? bannerExists.primary.MainImage.url : "default"
+    
+          return {
+            uid: result.uid,
+            first_publication_date: result.first_publication_date,
+            data: {
+              category: result.data.Categoria[0].text,
+              author: result.data.author[0].text,
+              title: result.data.slices.find(slice => slice.slice_type == "title_block").primary.title[0].text,
+              subtitle: result.data.slices.find(slice => slice.slice_type == "title_block").primary.description[0].text,
+              image: banner
+            }
+          }
+        })
+      }
+
     return {
-      props: { post },
+      props: { post, postList },
     }
   }
