@@ -49,6 +49,7 @@ export default function Busca({posts, slug} : SearchProps){
             <Head>
                 <title>TavanoBlog - Blog de tecnologia</title>
                 <meta name="description" content="Blog de tecnologia com diversos assuntos sobre Desenvolvimento Web, E-commerce, Marketing Digital, Performance e muito mais!" />
+                <meta name="robots" content="noindex" />
             </Head>
             <main className={styles.container}>
                 {

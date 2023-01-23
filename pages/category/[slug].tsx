@@ -64,7 +64,7 @@ export async function getStaticProps({ params, previewData }) {
     const response = await client.get({
       predicates: [
         prismic.predicate.at('document.type', 'posts'),
-        prismic.predicate.fulltext('my.posts.Title', slug)
+        prismic.predicate.fulltext('my.posts.Categoria', slug)
       ],
       orderings: {
         field: 'document.first_publication_date',
