@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /busca*
+Sitemap: https://tavanoblog.com.br/sitemap.xml

@@ -6,8 +6,14 @@ import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
 import { linkResolver, repositoryName } from '../prismicio'
 import Footer from '../components/Footer';
+import { ProviderProps, useEffect, useState } from 'react';
+import { createContext } from 'react';
+
+export const SearchContext = createContext<string | null>(null)
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+
   return (
     <PrismicProvider
       linkResolver={linkResolver}
@@ -20,8 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Header />
-        <Component {...pageProps} />
+        <Header/>
+          <Component {...pageProps} />
         <Footer />
       </PrismicPreview>
     </PrismicProvider>

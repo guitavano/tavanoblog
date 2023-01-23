@@ -1,14 +1,12 @@
-import styles from './categorie.module.scss'
-
 import { createClient } from './../../prismicio'
-import { GetStaticPaths } from 'next'
-import Head from 'next/head';
+
+import styles from './busca.module.scss'
 
 import * as prismic from '@prismicio/client'
 
-import {useRouter} from 'next/router'
-
 import PostList from '../components/postList/postList'
+
+import Head from 'next/head';
 
 interface Post {
     uid?: string;
@@ -26,13 +24,25 @@ interface Posts {
     next_page: string;
     results: Post[];
 }
-  
-interface CategorieProps {
+
+interface SearchProps {
     posts: Posts;
-    slug: String;
+    slug: string;
 }
 
-export default function Categorie({ posts, slug }: CategorieProps){
+
+export default function Busca({posts, slug} : SearchProps){
+
+    console.log(posts.results.length)
+
+    const filteredPosts = {
+        results: [],
+        next_page: ''
+    }
+
+    filteredPosts.results = posts.results.filter(post => post.data.title.toLowerCase().includes(slug.toLowerCase()))
+
+    console.log(posts.results.length)
 
     return(
         <>
@@ -41,31 +51,32 @@ export default function Categorie({ posts, slug }: CategorieProps){
                 <meta name="description" content="Blog de tecnologia com diversos assuntos sobre Desenvolvimento Web, E-commerce, Marketing Digital, Performance e muito mais!" />
             </Head>
             <main className={styles.container}>
-                <h1>{slug.toUpperCase()}</h1>
-                <PostList isHome={false} posts={posts}></PostList>
+                {
+                    filteredPosts.results.length > 0 &&
+                    <>
+                        <h1>Você buscou por: {slug}</h1>
+                        <PostList isHome={false} posts={filteredPosts}></PostList>
+                    </>
+                }
+                {
+                    filteredPosts.results.length == 0 &&
+                    <>
+                        <h1>Não encontramos resultados para: {slug}</h1>
+                        <h1>Veja outros posts</h1>
+                        <PostList isHome={false} posts={posts}></PostList>
+                    </>
+                }
             </main>     
         </>
     )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    return {
-      paths: [],
-      fallback: 'blocking',
-    }
-  };
-
-export async function getStaticProps({ params, previewData }) {
-
+export async function getServerSideProps({params, previewData }) {
     const {slug} = params
 
     const client = createClient({ previewData })
   
     const response = await client.get({
-      predicates: [
-        prismic.predicate.at('document.type', 'posts'),
-        prismic.predicate.fulltext('my.posts.Title', slug)
-      ],
       orderings: {
         field: 'document.first_publication_date',
         direction: 'desc',
@@ -93,9 +104,8 @@ export async function getStaticProps({ params, previewData }) {
         }
       })
     }
-  
+    
     return {
-      props: { posts, slug },
+      props: { posts, slug }, // will be passed to the page component as props
     }
   }
-  

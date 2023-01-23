@@ -12,8 +12,35 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     h1 {
         color: var(--bg);
     }
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    span{
+        display: flex;
+        position: absolute;
+        right: 8px;
+        cursor: pointer;
+    }
+}
+
+.searchInput{
+    height: 35px;
+    border-radius: 8px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+.searchInput:focus{
+    border-style: none;
+    border: none;
+    outline: none;
 }

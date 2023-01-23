@@ -8,6 +8,7 @@ import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import PostList from './../components/postList/postList'
+import * as prismic from '@prismicio/client'
 
 import Link from 'next/link'
 import Image from 'next/image';
@@ -199,10 +200,13 @@ export async function getStaticProps({ params, previewData }) {
 
     const responseList = await clientList.getByType('posts',{
       orderings: {
-      field: 'document.first_publication_date',
-      direction: 'desc',
-    },
-    pageSize: 3
+        field: 'document.first_publication_date',
+        direction: 'desc',
+      },
+      predicates: [
+        prismic.predicate.similar(response.id, 3)
+      ],
+      pageSize: 3
     })
 
     const postList : Posts = {
