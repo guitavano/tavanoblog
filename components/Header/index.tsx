@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 export default function Header() {
 
     const [search, setSearch] = useState("")
-    const [isSearching, setIsSearching] = useState(true)
+    const [isSearching, setIsSearching] = useState(false)
 
     function handleKeyDown (e) {
         if (e.key === 'Enter' && search.length > 0) {
