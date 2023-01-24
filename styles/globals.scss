@@ -45,7 +45,14 @@ a {
   --text: #eeeeee;
 }
 
+header.isSearching{
+  margin-bottom: 75px;
+}
 
+div.isSearching{
+  height: 72px !important;
+
+}
 
 .category{
   font-weight: bold;

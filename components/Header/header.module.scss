@@ -1,7 +1,10 @@
 .headerContainer {
     height: 6rem;
-
     background-color: var(--heading);
+    @media (max-width: 720px) {
+        height: 5rem;
+    }
+    transition: 1s;
 }
 
 .headerContent {
@@ -17,6 +20,9 @@
     h1 {
         color: var(--bg);
     }
+    @media (max-width: 720px) {
+        height: 5rem;
+    }
 }
 
 .inputContainer {
@@ -30,6 +36,46 @@
         right: 8px;
         cursor: pointer;
     }
+
+    @media (max-width: 720px) {
+        display: none;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: calc(5rem - 1px);
+        padding: 10px 0px;
+        background-color: var(--heading);
+        border: 1px solid var(--heading);
+        span{
+            right: 22px;
+        }
+    }
+}
+
+.inputContainerMobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(5rem - 15px);
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: var(--heading);
+    border: 1px solid var(--heading);
+    transition: 1s;
+    span{
+        display: flex;
+        position: absolute;
+        right: 22px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 720px) {
+        display: flex;
+    }
 }
 
 .searchInput{
@@ -37,10 +83,29 @@
     border-radius: 8px;
     border-style: none;
     padding-left: 10px;
+    @media (max-width: 720px) {
+        width: 95%;
+        height: 45px;
+        margin: auto;
+    }
 }
 
 .searchInput:focus{
     border-style: none;
     border: none;
     outline: none;
+}
+
+.closeInput{
+    display: none;
+    @media (max-width: 720px) {
+        display: block;
+    }
+}
+
+.openInput{
+    display: none;
+    @media (max-width: 720px) {
+        display: block;
+    }
 }
