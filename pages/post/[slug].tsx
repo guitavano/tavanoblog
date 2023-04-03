@@ -146,7 +146,7 @@ export default function Post({post, postList} : PostProps){
                         <FiUser />
                         <p>{post.author}</p>
                     </div>
-                    <div className='postList'>
+                    <div className='postList '>
                         <h2>Mais posts</h2>
                     <PostList isHome={false} posts={postList}></PostList>
                     </div>
