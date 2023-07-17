@@ -73,6 +73,7 @@ export default function Post({post, postList} : PostProps){
                     `{"@context": "https://schema.org","@type": "NewsArticle","mainEntityOfPage": {"@type": "WebPage","@id": "https://tavanoblog.com.br/post/${post.uid}"},"headline": "${post.data.title.replaceAll(`"`,`'`)}", "image": "${post.data.banner.url}", "datePublished": "${post.first_publication_date}","author": {"@type": "Person","name": "${post.author}"},"publisher": {"@type": "Organization","name": "TavanoBlog"}}`
                     }
                 </script>
+                <meta name="robots" content="max-image-preview:large" />
             </Head>
             <div className={`${styles.container} postContainer `}>
                 <div className={styles.content}>
