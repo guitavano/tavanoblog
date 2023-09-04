@@ -1,11 +1,7 @@
 import styles from './postList.module.scss'
 
-import { FiUser, FiCalendar } from 'react-icons/fi'
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Tilt from './../../../components/VanillaTilt/index'
 import PostImage from '.././postImage/postImage'
@@ -72,10 +68,13 @@ export default function PostList({posts, isHome}: PostProps){
                         <>
                             <Tilt className={styles.cardAtList} key={post.uid} options={options}>
                                 <Link href={`/post/${post.uid}`}>
-                                    <PostImage
-                                    imageUrl={post.data.image}
-                                    imageAlt={post.data.title}></PostImage>
-                                    <strong>{post.data.title}</strong>
+                                    <div>
+                                        <PostImage
+                                        imageUrl={post.data.image}
+                                        imageAlt={post.data.title}></PostImage>
+                                        <strong>{post.data.title}</strong>
+                                    </div>
+                                    
                                 </Link>
                                 <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
                                     <p>{post.data.category}</p>

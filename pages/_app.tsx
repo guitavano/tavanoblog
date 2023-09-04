@@ -6,13 +6,34 @@ import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
 import { linkResolver, repositoryName } from '../prismicio'
 import Footer from '../components/Footer';
-import { ProviderProps, useEffect, useState } from 'react';
 import { createContext } from 'react';
+import Router from "next/router";
+import { useEffect, useState } from 'react';
+import Loading from './components/loading/loading';
 
 export const SearchContext = createContext<string | null>(null)
 
 function MyApp({ Component, pageProps }: AppProps) {
 
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const start = () => {
+      console.log("start");
+      setLoading(true);
+    };
+    const end = () => {
+      console.log("finished");
+      setLoading(false);
+    };
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []);
 
   return (
     <PrismicProvider
@@ -27,7 +48,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <Header/>
-          <Component {...pageProps} />
+        {
+          loading ? <Loading />: <Component {...pageProps} />
+        }
+          
         <Footer />
       </PrismicPreview>
     </PrismicProvider>

@@ -54,12 +54,15 @@ export default function MainPost({posts} : PostProps){
                             return(
                                 <Tilt className={styles.mainImage} key={post.uid} options={optionsMain}>
                                     <Link href={`/post/${post.uid}`}>
-                                        <PostImage 
-                                        imageUrl={post.data.image}
-                                        imageAlt={post.data.title}></PostImage>
-                                        <div className={styles.mainInfo}>
-                                            <strong>{post.data.title}</strong>
+                                        <div>
+                                            <PostImage 
+                                            imageUrl={post.data.image}
+                                            imageAlt={post.data.title}></PostImage>
+                                            <div className={styles.mainInfo}>
+                                                <strong>{post.data.title}</strong>
+                                            </div>
                                         </div>
+                                        
                                     </Link>
                                     <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
                                             <p>{post.data.category}</p>
@@ -70,10 +73,13 @@ export default function MainPost({posts} : PostProps){
                             return(
                                 <Tilt className={styles.subImages} key={post.uid} options={options}>
                                     <Link href={`/post/${post.uid}`}>
-                                        <PostImage
-                                        imageUrl={post.data.image}
-                                        imageAlt={post.data.title}></PostImage>
-                                        <strong>{post.data.title}</strong>
+                                        <div>
+                                            <PostImage
+                                            imageUrl={post.data.image}
+                                            imageAlt={post.data.title}></PostImage>
+                                            <strong>{post.data.title}</strong>
+                                        </div>
+                                        
                                     </Link>
                                     <Link className={`category ${styles.category} ${post.data.category}`} href={`/category/${post.data.category}`}>
                                         <p>{post.data.category}</p>

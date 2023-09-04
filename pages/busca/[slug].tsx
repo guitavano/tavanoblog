@@ -2,8 +2,6 @@ import { createClient } from './../../prismicio'
 
 import styles from './busca.module.scss'
 
-import * as prismic from '@prismicio/client'
-
 import PostList from '../components/postList/postList'
 
 import Head from 'next/head';
@@ -33,16 +31,12 @@ interface SearchProps {
 
 export default function Busca({posts, slug} : SearchProps){
 
-    console.log(posts.results.length)
-
     const filteredPosts = {
         results: [],
         next_page: ''
     }
 
     filteredPosts.results = posts.results.filter(post => post.data.title.toLowerCase().includes(slug.toLowerCase()))
-
-    console.log(posts.results.length)
 
     return(
         <>
