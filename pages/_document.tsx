@@ -5,6 +5,19 @@ export default class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
+
+                <script 
+                    defer={true}
+                    data-domain="tavanoblog.com.br"
+                    data-api="https://plausible.io/api/event" 
+                    src="https://plausible.io/js/script.manual.hash.js"
+                ></script>
+                <script
+                    src='http://localhost:8000/config.js'
+                >
+
+                </script>
+
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RWRJE2WYS"></script>
                 <script dangerouslySetInnerHTML={{
                     __html: `
