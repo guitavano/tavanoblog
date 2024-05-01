@@ -6,17 +6,11 @@ export default class MyDocument extends Document {
             <Html lang='pt-BR'>
                 <Head>
 
-                <script 
-                    defer={true}
-                    data-domain="tavanoblog.com.br"
-                    data-api="https://plausible.io/api/event" 
-                    src="https://plausible.io/js/script.manual.hash.js"
-                ></script>
+                <script defer data-domain="tavanoblog.com.br" src="https://plausible.io/js/script.js"></script>
                 <script
                     defer={true}
                     src='http://localhost:8000/config.js'
                 >
-
                 </script>
 
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RWRJE2WYS"></script>
