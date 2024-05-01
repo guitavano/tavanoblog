@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
                     src="https://plausible.io/js/script.manual.hash.js"
                 ></script>
                 <script
+                    defer={true}
                     src='http://localhost:8000/config.js'
                 >
 
