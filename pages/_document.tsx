@@ -5,8 +5,6 @@ export default class MyDocument extends Document {
         return (
             <Html lang='pt-BR'>
                 <Head>
-
-                <script defer data-domain="tavanoblog.com.br" src="https://plausible.io/js/script.js"></script>
                 <script
                     defer={true}
                     src='http://localhost:8000/config.js'
